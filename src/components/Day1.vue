@@ -34,6 +34,7 @@ export default {
   position: relative;
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .center {
@@ -57,6 +58,8 @@ export default {
   background-color: #fff;
   transform: rotate(45deg);
   border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .one-two {
@@ -67,6 +70,7 @@ export default {
   width: 20px;
   background-color: #fff;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .zero-one,
@@ -78,6 +82,7 @@ export default {
   width: 60px;
   border: 20px solid #fff;
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .zero-two {
   z-index: 1;
