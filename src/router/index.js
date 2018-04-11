@@ -5,6 +5,7 @@ import Day1 from '@/components/Day1'
 import Day2 from '@/components/Day2'
 import Day3 from '@/components/Day3'
 import Day4 from '@/components/Day4'
+import Day5 from '@/components/Day5'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/Day4',
       name: 'Day4',
       component: Day4
+    },
+    {
+      path: '/Day5',
+      name: 'Day5',
+      component: Day5
     }
   ]
 })
