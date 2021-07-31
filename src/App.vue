@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <ul>
-      <li v-for="route in routes" :key="route.name" @click="redirect(route.name)">
+      <li v-for="(route, index) in routes" :key="`day${index + 1}`" @click="redirect(route)">
         {{ route.name }}
       </li>
     </ul>
@@ -26,8 +26,10 @@ export default defineComponent({
     this.routes = this.$router.options.routes.slice()
   },
   methods: {
-    redirect(name: string) {
-      this.$router.push(name)
+    redirect(route: RouteRecordRaw) {
+      if (route && route.name) {
+        this.$router.push(route)
+      }
     },
   },
 })
