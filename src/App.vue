@@ -1,41 +1,41 @@
 <template>
-  <div id="app">
-    <div class="nav">
-      <ul>
-        <li v-for="route in routes" @click="redrict(route.name);">
-          {{ route.name }}
-        </li>
-      </ul>
-    </div>
-    <div class="display">
-
-      <router-view/>
-    </div>
+  <div class="nav">
+    <ul>
+      <li v-for="route in routes" :key="route.name" @click="redirect(route.name)">
+        {{ route.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="display">
+    <router-view />
   </div>
 </template>
 
-<script>
-export default {
-  name: "App",
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { RouteRecordRaw } from 'vue-router'
+
+export default defineComponent({
+  name: 'App',
   data() {
     return {
-      routes: []
-    };
+      routes: [] as Array<RouteRecordRaw>,
+    }
   },
   mounted() {
-    this.routes = this.$router.options.routes.slice();
+    this.routes = this.$router.options.routes.slice()
   },
   methods: {
-    redrict(name) {
-      this.$router.push(name);
-    }
-  }
-};
+    redirect(name: string) {
+      this.$router.push(name)
+    },
+  },
+})
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
