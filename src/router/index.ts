@@ -31,6 +31,11 @@ const routes = [
     name: 'Day6',
     component: () => import('@/components/Day6.vue'),
   },
+  {
+    path: '/Slot',
+    name: 'Slot',
+    component: () => import('@/components/Slot.vue'),
+  },
 ]
 
 const router = createRouter({ history: createWebHistory(), routes })
