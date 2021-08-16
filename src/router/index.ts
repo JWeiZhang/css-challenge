@@ -37,6 +37,11 @@ const routes = [
     component: () => import('@/components/Day7.vue'),
   },
   {
+    path: '/Day8',
+    name: 'Day8',
+    component: () => import('@/components/Day8.vue'),
+  },
+  {
     path: '/Slot',
     name: 'Slot',
     component: () => import('@/components/Slot.vue'),
