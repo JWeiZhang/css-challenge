@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
 .day8 {
   width: 400px;
   height: 400px;
@@ -45,7 +46,6 @@ export default {
   left: 20px;
   width: 50px;
   height: 50px;
-  filter: blur(5px);
   @for $i from 1 through 8 {
     &.blubb-#{$i} {
       transform: rotate(random(300) + deg);
@@ -58,7 +58,7 @@ export default {
         background-color: #fff;
         border-radius: 50%;
         transform-origin: (40 - $i * 3) + px (40 - $i * 3) + px;
-        animation: rotate (2.5 + $i / 5) + s ease-in-out ($i / 5) + s infinite;
+        animation: rotate (2.5 + math.div($i, 5)) + s ease-in-out (math.div($i, 5)) + s infinite;
         filter: blur(5px);
       }
     }
@@ -70,7 +70,6 @@ export default {
   top: 38px;
   left: 38px;
   background-color: #fff;
-  filter: blur(3px);
 
   @for $i from 1 through 10 {
     &.sparkle-#{$i} {
@@ -86,7 +85,8 @@ export default {
         height: (7 + $i) + px;
         border-radius: 50%;
         transform-origin: (60-$i * 2) + px (60-$i * 2) + px;
-        animation: rotate (3.5 + $i / 5) + s ease-in-out ($i / 5) + s infinite;
+        animation: rotate (3.5 + math.div($i, 5)) + s ease-in-out (math.div($i, 5)) + s infinite;
+        filter: blur(3px);
       }
     }
   }
